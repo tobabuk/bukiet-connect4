@@ -1,13 +1,12 @@
 package bukiet.connect4;
 
-import java.util.Arrays;
-
 
 public class ConnectBoard {
     private int width;
     private int height;
-    public char[][] board;
-    private char empty = ' ';
+    private char[][] board;
+    private final char EMPTY = ' ';
+
 
 
     public ConnectBoard(int height, int width) {
@@ -17,10 +16,14 @@ public class ConnectBoard {
 
         for (int h = 0; h < height; h++) {
             for (int w = 0; w < width; w++) {
-                board[h][w] = empty;
+                board[h][w] = EMPTY;
 
             }
         }
+    }
+
+    public char[][] getBoard() {
+        return board;
     }
 
     public void displayBoard() {
@@ -35,7 +38,7 @@ public class ConnectBoard {
     public void insert(char color, int col) {
 
         for (int row = height - 1; row >= 0; row--) {
-            if (board[row][col] == empty) {
+            if (board[row][col] == EMPTY) {
                 board[row][col] = color;
                 return;
             }
@@ -48,7 +51,7 @@ public class ConnectBoard {
         for (int row = 0; row < height; row++) {
             for (int col = 0; col <= width - 4; col++) {
                 char color = board[row][col];
-                if (board[row][col] != empty
+                if (board[row][col] != EMPTY
                         &&
                         board[row][col + 1] == color
                         && board[row][col + 2] == color
@@ -61,7 +64,7 @@ public class ConnectBoard {
         for (int row = 0; row <= height - 4; row++) {
             for (int col = 0; col < width; col++) {
                 char color = board[row][col];
-                if (board[row][col] != empty
+                if (board[row][col] != EMPTY
                         &&
                         board[row + 1][col] == color
                         &&
@@ -75,7 +78,7 @@ public class ConnectBoard {
         for (int row = 0; row <= height - 4; row++) {
             for (int col = 0; col < width - 4; col++) {
                 char color = board[row][col];
-                if (board[row][col] != empty
+                if (board[row][col] != EMPTY
                         &&
                         board[row + 1][col + 1] == color
                         &&
@@ -90,7 +93,7 @@ public class ConnectBoard {
         for (int row = 3; row < height; row++) {
             for (int col = 0; col <= width - 4; col++) {
                 char color = board[row][col];
-                if (board[row][col] != empty
+                if (board[row][col] != EMPTY
                         &&
                         col + 3 < width && row - 3 >= 0
                         &&
@@ -104,7 +107,7 @@ public class ConnectBoard {
             }
         }
 
-        return empty;
+        return EMPTY;
     }
 
 
@@ -112,7 +115,7 @@ public class ConnectBoard {
 
     {
         for (int i = 0; i < height; i++) {
-            if (board[i][col] == empty) {
+            if (board[i][col] == EMPTY) {
                 return false;
             }
         }

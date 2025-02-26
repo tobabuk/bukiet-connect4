@@ -26,7 +26,7 @@ class ConnectBoardTest {
 
 
         board.insert('y', 1);
-        assertEquals('y', board.board[5][1]);
+        assertEquals('y', board.getBoard()[5][1]);
 
     }
 
