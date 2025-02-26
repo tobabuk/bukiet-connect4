@@ -44,15 +44,15 @@ public class ConnectBoard {
     }
 
     public char calculateWinner() {
-        // loops through the board and decides when someone has won - if four of same color going up, down , left , right, diagonal
 
         for (int row = 0; row < height; row++)
             for (int col = 0; col <= width - 4; col++) {
                 char color = board[row][col];
-                if (board[row][col] != empty &&
-                        board[row][col + 1] == color &&
-                        board[row][col + 2] == color &&
-                        board[row][col + 3] == color) {
+                if (board[row][col] != empty
+                        &&
+                        board[row][col + 1] == color
+                        && board[row][col + 2] == color
+                        && board[row][col + 3] == color) {
                     return color;
                 }
             }
@@ -61,9 +61,12 @@ public class ConnectBoard {
         for (int row = 0; row <= height - 4; row++)
             for (int col = 0; col < width ; col++) {
                 char color = board[row][col];
-                if (board[row][col] != empty &&
-                        board[row + 1][col] == color &&
-                        board[row + 2][col] == color &&
+                if (board[row][col] != empty
+                        &&
+                        board[row + 1][col] == color
+                        &&
+                        board[row + 2][col] == color
+                        &&
                         board[row + 3][col] == color) {
                     return color;
                 }
@@ -71,9 +74,12 @@ public class ConnectBoard {
         for (int row = 0; row <= height - 4; row++)
             for (int col = 0; col < width - 4 ; col++) {
                 char color = board[row][col];
-                if (board[row][col] != empty &&
-                        board[row + 1][col + 1] == color &&
-                        board[row + 2][col + 2] == color &&
+                if (board[row][col] != empty
+                        &&
+                        board[row + 1][col + 1] == color
+                        &&
+                        board[row + 2][col + 2] == color
+                        &&
                         board[row + 3][col + 3] == color) {
                     return color;
                 }
@@ -83,9 +89,12 @@ public class ConnectBoard {
             for (int col = 0; col <= width - 4; col++) {
                 char color = board[row][col];
                 if (board[row][col] != empty &&
-                        col + 3 < width && row - 3 >= 0 &&
-                        board[row - 1][col + 1] == color &&
-                        board[row - 2][col + 2] == color &&
+                        col + 3 < width && row - 3 >= 0
+                        &&
+                        board[row - 1][col + 1] == color
+                        &&
+                        board[row - 2][col + 2] == color
+                        &&
                         board[row - 3][col + 3] == color) {
                     return color;
                 }

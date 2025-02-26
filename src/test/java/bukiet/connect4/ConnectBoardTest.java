@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class connectBoardTest {
+class ConnectBoardTest {
     @Test
     public void isFull() {
         ConnectBoard board = new ConnectBoard(6, 7);
@@ -32,21 +32,9 @@ class connectBoardTest {
 
 
     @Test
-    public void calculateWinner(){
+    public void calculateWinner() {
         ConnectBoard board = new ConnectBoard(6, 7);
-       /** board.insert('y', 0);
-        board.insert('y', 1);
-        board.insert('y', 2);
-        board.insert('y', 3);
 
-        assertEquals('y', board.calculateWinner());
-
-        board.insert('y', 0);
-        board.insert('y', 0);
-        board.insert('y', 0);
-        board.insert('y', 0);
-        assertEquals('y', board.calculateWinner());
-        **/
 
         board.insert('r', 0);
         board.insert('y', 1);
