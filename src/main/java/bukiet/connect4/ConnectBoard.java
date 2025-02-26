@@ -8,7 +8,6 @@ public class ConnectBoard {
     private static final char empty = ' ';
 
 
-
     public ConnectBoard(int height, int width) {
         this.width = width;
         this.height = height;
@@ -26,14 +25,6 @@ public class ConnectBoard {
         return board;
     }
 
-    public void displayBoard() {
-        for (int row = 0; row < height; row++) {
-            for (int col = 0; col < width; col++) {
-                System.out.print("|_" + board[row][col]);
-            }
-            System.out.println("|");
-        }
-    }
 
     public void insert(char color, int col) {
 
@@ -111,9 +102,7 @@ public class ConnectBoard {
     }
 
 
-    public boolean isFull(int col)
-
-    {
+    public boolean isFull(int col) {
         for (int i = 0; i < height; i++) {
             if (board[i][col] == empty) {
                 return false;
@@ -122,7 +111,18 @@ public class ConnectBoard {
         return true;
     }
 
+    @Override
+    public String toString() {
+        {
+            StringBuilder str = new StringBuilder();
+            for (int row = 0; row < height; row++) {
+                for (int col = 0; col < width; col++) {
+                    str.append("|_").append(board[row][col]);
+                }
+                str.append("|");
+            }
 
-
-
+            return str.toString();
+        }
+    }
 }
