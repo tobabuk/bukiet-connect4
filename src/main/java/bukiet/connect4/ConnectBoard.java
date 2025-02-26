@@ -15,11 +15,12 @@ public class ConnectBoard {
         this.height = height;
         this.board = new char[height][width];
 
-        for (int h = 0; h < height; h++)
+        for (int h = 0; h < height; h++) {
             for (int w = 0; w < width; w++) {
                 board[h][w] = empty;
 
             }
+        }
     }
 
     public void displayBoard() {
