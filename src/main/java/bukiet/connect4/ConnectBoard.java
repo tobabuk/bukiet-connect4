@@ -37,7 +37,6 @@ public class ConnectBoard {
             if (board[row][col] == empty) {
                 board[row][col] = color;
                 return;
-
             }
 
         }
@@ -45,7 +44,7 @@ public class ConnectBoard {
 
     public char calculateWinner() {
 
-        for (int row = 0; row < height; row++)
+        for (int row = 0; row < height; row++) {
             for (int col = 0; col <= width - 4; col++) {
                 char color = board[row][col];
                 if (board[row][col] != empty
@@ -56,10 +55,10 @@ public class ConnectBoard {
                     return color;
                 }
             }
+        }
 
-
-        for (int row = 0; row <= height - 4; row++)
-            for (int col = 0; col < width ; col++) {
+        for (int row = 0; row <= height - 4; row++) {
+            for (int col = 0; col < width; col++) {
                 char color = board[row][col];
                 if (board[row][col] != empty
                         &&
@@ -71,8 +70,9 @@ public class ConnectBoard {
                     return color;
                 }
             }
-        for (int row = 0; row <= height - 4; row++)
-            for (int col = 0; col < width - 4 ; col++) {
+        }
+        for (int row = 0; row <= height - 4; row++) {
+            for (int col = 0; col < width - 4; col++) {
                 char color = board[row][col];
                 if (board[row][col] != empty
                         &&
@@ -85,10 +85,12 @@ public class ConnectBoard {
                 }
 
             }
-        for (int row = 3; row < height; row++)
+        }
+        for (int row = 3; row < height; row++) {
             for (int col = 0; col <= width - 4; col++) {
                 char color = board[row][col];
-                if (board[row][col] != empty &&
+                if (board[row][col] != empty
+                        &&
                         col + 3 < width && row - 3 >= 0
                         &&
                         board[row - 1][col + 1] == color
@@ -99,6 +101,7 @@ public class ConnectBoard {
                     return color;
                 }
             }
+        }
 
         return empty;
     }
@@ -108,8 +111,9 @@ public class ConnectBoard {
 
     {
         for (int i = 0; i < height; i++) {
-            if (board[i][col] == empty)
+            if (board[i][col] == empty) {
                 return false;
+            }
         }
         return true;
     }
