@@ -5,7 +5,7 @@ public class ConnectBoard {
     private int width;
     private int height;
     private char[][] board;
-    private final char empty = ' ';
+    private static final char empty = ' ';
 
 
 
